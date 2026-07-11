@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WorldForge AI</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    🌎 WorldForge AI
+
+    <small>
+        Construa seu próprio universo de fantasia
+    </small>
+
+</header>
+
+
+
+<main class="container">
+
+
+
+<section class="card">
+
+<h2>🌌 Criador de Mundo</h2>
+
+
+<input 
+id="worldName" 
+placeholder="Nome do mundo">
+
+
+<select id="theme">
+
+<option>Fantasia Medieval</option>
+
+<option>Fantasia Sombria</option>
+
+<option>Fantasia Cósmica</option>
+
+<option>Mundo Pós-Apocalíptico</option>
+
+</select>
+
+
+<button onclick="createWorld()">
+Criar Universo
+</button>
+
+
+<div id="world" class="result">
+
+Seu mundo aparecerá aqui...
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="card">
+
+
+<h2>✨ Gerador de Nomes</h2>
+
+
+<button onclick="generateName()">
+
+Gerar Nome de Mundo
+
+</button>
+
+
+<div id="name" class="result">
+
+Nenhum nome gerado...
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="card">
+
+
+<h2>🧬 Criador de Raças</h2>
+
+
+<button onclick="generateRace()">
+
+Criar Raça
+
+</button>
+
+
+<div id="race" class="result">
+
+Nenhuma raça criada...
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="card">
+
+
+<h2>⚔️ Criador de Conflitos</h2>
+
+
+<button onclick="generateWar()">
+
+Criar Guerra
+
+</button>
+
+
+<div id="war" class="result">
+
+Nenhum conflito criado...
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="card">
+
+
+<h2>🔮 Sistema de Magia</h2>
+
+
+<button onclick="generateMagic()">
+
+Criar Sistema Mágico
+
+</button>
+
+
+<div id="magic" class="result">
+
+Nenhuma magia criada...
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="card">
+
+
+<h2>💾 Salvar Mundo</h2>
+
+
+<button onclick="saveWorld()">
+
+Salvar Projeto
+
+</button>
+
+
+<button onclick="loadWorld()">
+
+Carregar Projeto
+
+</button>
+
+
+<div id="saveStatus" class="result">
+
+Nenhum mundo salvo...
+
+</div>
+
+
+</section>
+
+
+
+</main>
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
