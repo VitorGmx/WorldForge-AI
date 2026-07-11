@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>WorldForge AI</title>
+<title>WorldForge AI - Criador de Universos</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -16,49 +16,56 @@
 <body>
 
 
-<header>
+<header class="top">
 
-    🌎 WorldForge AI
+<h1>🌌 WorldForge AI</h1>
 
-    <p>
-        Crie seu próprio universo de fantasia
-    </p>
+<p>
+Forje mundos, civilizações e histórias
+</p>
 
 </header>
 
 
 
-<main class="container">
+
+<div class="timeline">
 
 
+<div class="phase active">
+🌎 Mundo
+</div>
 
-<!-- BARRA DE PROGRESSO -->
 
-<div class="progress">
+<div class="phase">
+🧬 Raças
+</div>
 
-    <div class="step active">
-        🌎 Mundo
-    </div>
 
-    <div class="step">
-        🧬 Raças
-    </div>
+<div class="phase">
+🏰 Reinos
+</div>
 
-    <div class="step">
-        🏰 Reinos
-    </div>
 
-    <div class="step">
-        🔮 Magia
-    </div>
+<div class="phase">
+🔮 Magia
+</div>
 
-    <div class="step">
-        🐉 Criaturas
-    </div>
 
-    <div class="step">
-        📖 Resumo
-    </div>
+<div class="phase">
+🐉 Criaturas
+</div>
+
+
+<div class="phase">
+📜 História
+</div>
+
+
+<div class="phase">
+🌌 Resumo
+</div>
+
 
 </div>
 
@@ -66,89 +73,86 @@
 
 
 
-<!-- ETAPA 1 -->
-
-<section class="window active">
 
 
-<h2>
-🌎 Criar Mundo
-</h2>
+<main class="creator">
 
 
-<label>
-Nome do Universo
-</label>
 
-<input 
-id="worldName"
+
+
+<!-- MUNDO -->
+
+<section class="panel active">
+
+
+<h2>🌎 Criação do Universo</h2>
+
+
+<label>Nome do Universo</label>
+
+<input id="worldName"
 placeholder="Ex: Aetherion">
 
 
+<label>Título do Mundo</label>
 
-<label>
-Tipo de Mundo
-</label>
+<input id="worldTitle"
+placeholder="Ex: O Reino Além das Estrelas">
+
+
+<label>Tipo de Universo</label>
 
 
 <select id="worldType">
 
-<option>
-Fantasia Medieval
-</option>
+<option>Fantasia Medieval</option>
 
-<option>
-Fantasia Sombria
-</option>
+<option>Fantasia Sombria</option>
 
-<option>
-Fantasia Cósmica
-</option>
+<option>Fantasia Cósmica</option>
 
-<option>
-Ficção Científica
-</option>
+<option>Steampunk</option>
 
-<option>
-Pós-Apocalíptico
-</option>
+<option>Ficção Científica</option>
+
+<option>Pós-Apocalíptico</option>
 
 </select>
 
 
 
-<label>
-Nível de magia
-</label>
+
+<label>Era Atual</label>
 
 
-<select id="magicLevel">
+<select id="worldEra">
 
-<option>
-Sem magia
-</option>
+<option>Era dos Deuses Caídos</option>
 
-<option>
-Magia rara
-</option>
+<option>Era dos Reis</option>
 
-<option>
-Magia comum
-</option>
+<option>Era das Guerras</option>
 
-<option>
-Magia absurda
-</option>
+<option>Era da Descoberta</option>
+
+<option>Era do Fim</option>
 
 </select>
+
+
+
+
+<label>Descrição inicial</label>
+
+<textarea id="worldDescription"
+placeholder="Descreva o universo..."></textarea>
 
 
 
 
 <button class="next">
-
 Próximo ➜
-
 </button>
 
 
@@ -160,43 +164,87 @@ Próximo ➜
 
 
 
-<!-- ETAPA 2 -->
-
-<section class="window">
 
 
-<h2>
-🧬 Raças
-</h2>
+<!-- RAÇAS -->
+
+<section class="panel">
 
 
-<div class="list">
-
-Nenhuma raça criada
-
-</div>
+<h2>🧬 Civilizações e Raças</h2>
 
 
-<button>
+<div class="creation-box">
+
+
+<label>Nome da Raça</label>
+
+<input id="raceName"
+placeholder="Ex: Zytherianos">
+
+
+<label>Origem</label>
+
+<select id="raceOrigin">
+
+<option>Descendentes de Deuses</option>
+
+<option>Criados por uma civilização antiga</option>
+
+<option>Nascidos de energia elemental</option>
+
+<option>Vindos de outra dimensão</option>
+
+<option>Evolução de uma espécie ancestral</option>
+
+</select>
+
+
+
+<label>Aparência</label>
+
+<input id="raceAppearance"
+placeholder="Ex: Pele cristalina com runas luminosas">
+
+
+<label>Cultura</label>
+
+<input id="raceCulture"
+placeholder="Ex: Império de guerreiros mágicos">
+
+
+<label>Habilidade principal</label>
+
+<input id="racePower"
+placeholder="Ex: Controle da gravidade">
+
+
+<button id="addRace">
 + Criar Raça
 </button>
 
 
-<br>
+</div>
+
+
+
+<div id="raceList" class="database">
+
+Nenhuma raça criada.
+
+</div>
+
 
 
 <button class="back">
-
 ⬅ Voltar
-
 </button>
 
 
 <button class="next">
-
 Próximo ➜
-
 </button>
+
 
 
 </section>
@@ -209,42 +257,66 @@ Próximo ➜
 
 
 
-<!-- ETAPA 3 -->
+<!-- REINOS -->
 
-<section class="window">
-
-
-<h2>
-🏰 Reinos e Civilizações
-</h2>
+<section class="panel">
 
 
-<div class="list">
-
-Nenhum reino criado
-
-</div>
+<h2>🏰 Reinos e Civilizações</h2>
 
 
-<button>
+<label>Nome do Reino</label>
+
+<input id="kingdomName"
+placeholder="Ex: Império Valnor">
+
+
+<label>Governo</label>
+
+
+<select id="government">
+
+<option>Monarquia</option>
+
+<option>Império</option>
+
+<option>Conselho de Magos</option>
+
+<option>Teocracia</option>
+
+<option>Federação</option>
+
+</select>
+
+
+
+<label>Ideologia</label>
+
+<input id="kingdomCulture"
+placeholder="Ex: Busca por conhecimento proibido">
+
+
+<button id="addKingdom">
 + Criar Reino
 </button>
 
 
-<br>
+
+<div id="kingdomList" class="database">
+
+Nenhum reino criado.
+
+</div>
+
 
 
 <button class="back">
-
 ⬅ Voltar
-
 </button>
 
 
 <button class="next">
-
 Próximo ➜
-
 </button>
 
 
@@ -258,42 +330,65 @@ Próximo ➜
 
 
 
-<!-- ETAPA 4 -->
-
-<section class="window">
+<!-- MAGIA -->
 
 
-<h2>
-🔮 Sistema de Magia
-</h2>
+<section class="panel">
 
 
-<div class="list">
-
-Nenhuma magia criada
-
-</div>
+<h2>🔮 Sistema de Magia</h2>
 
 
-<button>
+<label>Nome da Magia</label>
+
+<input id="magicName"
+placeholder="Ex: Aetherium">
+
+
+<label>Origem</label>
+
+<select id="magicOrigin">
+
+<option>Energia da Alma</option>
+
+<option>Cristais Ancestrais</option>
+
+<option>Sangue Divino</option>
+
+<option>Fragmentos de Estrelas</option>
+
+<option>Dimensões Paralelas</option>
+
+</select>
+
+
+
+<label>Regra ou Limitação</label>
+
+<input id="magicRule"
+placeholder="Ex: Todo feitiço cobra memória">
+
+
+<button id="addMagic">
 + Criar Magia
 </button>
 
 
-<br>
+<div id="magicList" class="database">
+
+Nenhuma magia criada.
+
+</div>
+
 
 
 <button class="back">
-
 ⬅ Voltar
-
 </button>
 
 
 <button class="next">
-
 Próximo ➜
-
 </button>
 
 
@@ -307,42 +402,65 @@ Próximo ➜
 
 
 
-<!-- ETAPA 5 -->
-
-<section class="window">
+<!-- CRIATURAS -->
 
 
-<h2>
-🐉 Criaturas e Monstros
-</h2>
+<section class="panel">
 
 
-<div class="list">
-
-Nenhuma criatura criada
-
-</div>
+<h2>🐉 Criaturas e Monstros</h2>
 
 
-<button>
+<label>Nome da Criatura</label>
+
+<input id="creatureName"
+placeholder="Ex: Dragão Noxaris">
+
+
+<label>Categoria</label>
+
+
+<select id="creatureType">
+
+<option>Comum</option>
+
+<option>Raro</option>
+
+<option>Lendário</option>
+
+<option>Divino</option>
+
+</select>
+
+
+<label>Habilidade</label>
+
+<input id="creaturePower"
+placeholder="Ex: Controle de tempestades">
+
+
+
+<button id="addCreature">
 + Criar Criatura
 </button>
 
 
-<br>
+
+<div id="creatureList" class="database">
+
+Nenhuma criatura criada.
+
+</div>
+
 
 
 <button class="back">
-
 ⬅ Voltar
-
 </button>
 
 
 <button class="next">
-
 Próximo ➜
-
 </button>
 
 
@@ -356,34 +474,29 @@ Próximo ➜
 
 
 
-<!-- ETAPA FINAL -->
-
-<section class="window">
+<!-- RESUMO -->
 
 
-<h2>
-📖 Universo Completo
-</h2>
+<section class="panel">
 
 
-<div id="summary" class="summary">
+<h2>📜 Enciclopédia do Universo</h2>
 
-Seu universo aparecerá aqui.
+
+<div id="summary">
+
+Seu universo completo aparecerá aqui.
 
 </div>
 
 
-<br>
-
 
 <button class="back">
-
 ⬅ Voltar
-
 </button>
 
 
-<button>
+<button id="export">
 
 💾 Exportar Universo
 
@@ -397,6 +510,7 @@ Seu universo aparecerá aqui.
 
 
 </main>
+
 
 
 
