@@ -1,78 +1,116 @@
 const partesNome = [
-    "Aether",
-    "Val",
-    "Nox",
-    "Eld",
-    "Thal",
-    "Zy",
-    "Kor",
-    "Lun",
-    "Drak",
-    "Or",
-    "Vyr",
-    "Kael",
-    "Myth",
-    "Ar"
+    "Aether","Val","Nox","Eld","Thal","Zy",
+    "Kor","Lun","Drak","Or","Vyr","Kael",
+    "Myth","Ar","Xen","Vor","Nyx","Ery"
 ];
 
 
-const racas = [
-    "Elfos das Sombras",
-    "Orcs de Ferro",
-    "Humanos Celestiais",
-    "Anões Vulcânicos",
-    "Serpentes Eternas",
-    "Vampiros Antigos",
-    "Dragões Ancestrais",
-    "Criaturas Astrais"
+const origens = [
+    "Celestial",
+    "Abissal",
+    "Elemental",
+    "Dimensional",
+    "Ancestral",
+    "Artificial",
+    "Espiritual",
+    "Extraterrestre",
+    "Mutante",
+    "Divina"
 ];
 
 
-const habilidades = [
-    "Controle dos elementos",
-    "Força sobrenatural",
-    "Manipulação da mente",
-    "Velocidade absurda",
-    "Domínio das sombras",
-    "Regeneração"
+const aparencias = [
+    "pele cristalizada com marcas brilhantes",
+    "olhos sem pupilas capazes de enxergar energia",
+    "corpos feitos parcialmente de fumaça",
+    "escamas metálicas extremamente resistentes",
+    "quatro braços adaptados para combate",
+    "asas formadas por energia pura",
+    "chifres contendo antigos símbolos mágicos",
+    "corpos com partes mecânicas avançadas",
+    "pele coberta por runas vivas",
+    "formas semelhantes a sombras vivas"
+];
+
+
+const culturas = [
+    "império militar extremamente organizado",
+    "clãs nômades que viajam entre mundos",
+    "sociedade guiada por sacerdotes antigos",
+    "civilização tecnológica avançada",
+    "tribos conectadas com a natureza",
+    "colmeia com consciência coletiva",
+    "ordem secreta de estudiosos",
+    "reinos divididos por guerras antigas"
+];
+
+
+const poderes = [
+    "controle da gravidade",
+    "manipulação temporal",
+    "absorção de energia",
+    "controle dos elementos",
+    "criação de matéria",
+    "telepatia avançada",
+    "regeneração extrema",
+    "viagem dimensional",
+    "controle das sombras",
+    "alteração da realidade"
 ];
 
 
 const fraquezas = [
-    "Luz pura",
-    "Magia antiga",
-    "Ferro negro",
-    "Energia divina",
-    "Memórias perdidas"
+    "dependência de uma fonte de energia rara",
+    "vulnerabilidade a magia antiga",
+    "perda gradual de memória",
+    "fraqueza contra determinado elemento",
+    "necessidade de um ambiente específico",
+    "instabilidade emocional causada pelo poder",
+    "envelhecimento acelerado ao usar habilidades"
 ];
 
 
 const guerras = [
-    "Uma guerra entre deuses dividiu os continentes.",
-    "Um antigo império voltou para conquistar o mundo.",
-    "Uma criatura lendária despertou após mil anos.",
-    "Duas raças entraram em conflito por uma fonte de magia.",
-    "Um portal dimensional abriu trazendo uma ameaça desconhecida."
+    "Uma guerra entre impérios destruiu metade do continente.",
+    "Uma entidade antiga despertou e mudou o equilíbrio do mundo.",
+    "Dois deuses iniciaram uma batalha que afetou todas as raças.",
+    "Um portal abriu trazendo criaturas desconhecidas.",
+    "Uma civilização desapareceu deixando apenas ruínas."
 ];
 
 
-const fontesMagia = [
+const magias = [
     "Energia da alma",
-    "Fragmentos dos deuses",
-    "Cristais elementais",
-    "Dimensões paralelas",
+    "Cristais ancestrais",
+    "Sangue de criaturas divinas",
+    "Fragmentos de estrelas",
     "Força da natureza",
-    "Sangue ancestral"
+    "Dimensões alternativas",
+    "Tecnologia esquecida"
 ];
 
 
-const limitacoes = [
-    "Consome energia vital",
-    "Pode corromper o usuário",
-    "Apaga memórias antigas",
-    "Precisa de treinamento extremo",
-    "Só funciona durante a noite"
+const limitacoesMagia = [
+    "consome a energia vital do usuário",
+    "pode causar corrupção física",
+    "exige anos de treinamento",
+    "pode apagar lembranças",
+    "precisa de artefatos antigos",
+    "fica instável em grandes quantidades"
 ];
+
+
+
+let mundoAtual = {
+
+    nome:"",
+    tema:"",
+    raca:null,
+    magia:null,
+    historia:""
+
+};
+
 
 
 
@@ -84,16 +122,13 @@ function aleatorio(lista){
 
 
 
-
 function gerarNome(){
 
-    let nome = 
-    aleatorio(partesNome) +
-    aleatorio(partesNome) +
-    aleatorio(partesNome);
-
-
-    return nome;
+    return (
+        aleatorio(partesNome)+
+        aleatorio(partesNome)+
+        aleatorio(partesNome)
+    );
 
 }
 
@@ -105,17 +140,14 @@ function generateName(){
 
     let nome = gerarNome();
 
-
     document.getElementById("name").innerHTML =
-
     `
-    🌎 Novo mundo encontrado:
+    🌎 Nome criado:
 
     <br><br>
 
     <b>${nome}</b>
     `;
-
 
 }
 
@@ -125,8 +157,8 @@ function generateName(){
 
 function createWorld(){
 
-
-    let nome = document.getElementById("worldName").value;
+    let nome =
+    document.getElementById("worldName").value;
 
 
     if(nome.trim()==""){
@@ -141,35 +173,32 @@ function createWorld(){
 
 
 
-    document.getElementById("world").innerHTML =
+    mundoAtual.nome = nome;
+    mundoAtual.tema = tema;
 
+
+    mundoAtual.historia =
+    aleatorio(guerras);
+
+
+
+    document.getElementById("world").innerHTML =
     `
 
-    <h3>🌎 ${nome}</h3>
-
-    <b>Estilo:</b> ${tema}
+    🌎 <b>${nome}</b>
 
     <br><br>
 
+    Tipo:
+    ${tema}
 
-    🏰 Reinos:
+    <br><br>
 
-    <ul>
-
-    <li>Império de Valnor</li>
-
-    <li>Cidade de Elyria</li>
-
-    <li>Clãs de Drak'Thul</li>
-
-    </ul>
-
-
-    🌋 Evento histórico:
+    📜 História:
 
     <br>
 
-    ${aleatorio(guerras)}
+    ${mundoAtual.historia}
 
     `;
 
@@ -183,53 +212,86 @@ function createWorld(){
 function generateRace(){
 
 
-    document.getElementById("race").innerHTML =
+    let raca = {
 
+
+        nome:gerarNome(),
+
+
+        origem:aleatorio(origens),
+
+
+        aparencia:aleatorio(aparencias),
+
+
+        cultura:aleatorio(culturas),
+
+
+        poder:aleatorio(poderes),
+
+
+        fraqueza:aleatorio(fraquezas)
+
+
+    };
+
+
+
+    mundoAtual.raca = raca;
+
+
+
+    document.getElementById("race").innerHTML =
     `
 
-    🧬 Raça:
-
-    <b>${aleatorio(racas)}</b>
-
+    🧬 <b>${raca.nome}</b>
 
     <br><br>
 
 
-    ⚔️ Habilidade:
-
-    ${aleatorio(habilidades)}
+    Origem:
+    ${raca.origem}
 
 
     <br><br>
 
+    Aparência:
+    ${raca.aparencia}
 
-    ❌ Fraqueza:
 
-    ${aleatorio(fraquezas)}
+    <br><br>
+
+    Sociedade:
+    ${raca.cultura}
+
+
+    <br><br>
+
+    Poder:
+    ${raca.poder}
+
+
+    <br><br>
+
+    Fraqueza:
+    ${raca.fraqueza}
 
     `;
 
 
 }
+
 
 
 
 
 function generateWar(){
 
-
     document.getElementById("war").innerHTML =
 
-
-    `
-
-    ⚔️ ${aleatorio(guerras)}
-
-    `;
-
+    "⚔️ " + aleatorio(guerras);
 
 }
-
 
 
 
@@ -237,14 +299,28 @@ function generateWar(){
 function generateMagic(){
 
 
+    let magia = {
+
+
+        fonte:aleatorio(magias),
+
+
+        limite:aleatorio(limitacoesMagia)
+
+
+    };
+
+
+    mundoAtual.magia = magia;
+
+
+
     document.getElementById("magic").innerHTML =
-
-
     `
 
     🔮 Fonte:
 
-    ${aleatorio(fontesMagia)}
+    ${magia.fonte}
 
 
     <br><br>
@@ -252,7 +328,7 @@ function generateMagic(){
 
     ⚠️ Limitação:
 
-    ${aleatorio(limitacoes)}
+    ${magia.limite}
 
     `;
 
@@ -267,39 +343,46 @@ function generateMagic(){
 function saveWorld(){
 
 
-    let mundo = {
+    let arquivo = JSON.stringify(
 
+        mundoAtual,
 
-        nome:
-        document.getElementById("worldName").value,
+        null,
 
-
-        tema:
-        document.getElementById("theme").value,
-
-
-        data:
-        new Date().toLocaleString()
-
-
-    };
-
-
-
-    localStorage.setItem(
-
-        "WorldForge",
-
-        JSON.stringify(mundo)
+        4
 
     );
 
 
 
+    let blob = new Blob(
+
+        [arquivo],
+
+        {type:"application/json"}
+
+    );
+
+
+
+    let link = document.createElement("a");
+
+
+    link.href =
+    URL.createObjectURL(blob);
+
+
+    link.download =
+    (mundoAtual.nome || "meu_mundo")+".json";
+
+
+    link.click();
+
+
+
     document.getElementById("saveStatus").innerHTML =
 
-    "💾 Mundo salvo com sucesso!";
-
+    "💾 Mundo baixado no dispositivo!";
 
 }
 
@@ -310,62 +393,55 @@ function saveWorld(){
 function loadWorld(){
 
 
-    let mundo =
-
-    JSON.parse(
-
-        localStorage.getItem("WorldForge")
-
-    );
+    let input =
+    document.createElement("input");
 
 
-
-    if(!mundo){
-
-
-        document.getElementById("saveStatus").innerHTML =
-
-        "Nenhum mundo encontrado.";
+    input.type="file";
 
 
-        return;
-
-    }
+    input.accept=".json";
 
 
 
-
-    document.getElementById("saveStatus").innerHTML =
-
-
-    `
-
-    🌎 Mundo carregado:
-
-    <br><br>
+    input.onchange=function(event){
 
 
-    Nome:
-
-    <b>${mundo.nome}</b>
-
-
-    <br>
+        let arquivo =
+        event.target.files[0];
 
 
-    Tema:
 
-    ${mundo.tema}
-
-
-    <br>
+        let leitor =
+        new FileReader();
 
 
-    Criado:
 
-    ${mundo.data}
+        leitor.onload=function(){
 
-    `;
+
+            mundoAtual =
+            JSON.parse(leitor.result);
+
+
+
+            document.getElementById("saveStatus").innerHTML =
+
+            "🌎 Mundo carregado com sucesso!";
+
+
+
+        };
+
+
+
+        leitor.readAsText(arquivo);
+
+
+    };
+
+
+    input.click();
 
 
 }
