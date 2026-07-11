@@ -18,13 +18,14 @@
 
 <header>
 
-    🌎 WorldForge AI
+🌎 WorldForge AI
 
-    <small>
-        Construa seu próprio universo de fantasia
-    </small>
+<small>
+Construa seu próprio universo de fantasia
+</small>
 
 </header>
+
 
 
 
@@ -38,7 +39,7 @@
 
 
 <input 
-id="worldName" 
+id="worldName"
 placeholder="Nome do mundo">
 
 
@@ -50,14 +51,18 @@ placeholder="Nome do mundo">
 
 <option>Fantasia Cósmica</option>
 
+<option>Ficção Científica</option>
+
 <option>Mundo Pós-Apocalíptico</option>
 
 </select>
 
 
+
 <button onclick="createWorld()">
 Criar Universo
 </button>
+
 
 
 <div id="world" class="result">
@@ -75,20 +80,20 @@ Seu mundo aparecerá aqui...
 
 <section class="card">
 
-
 <h2>✨ Gerador de Nomes</h2>
 
 
 <button onclick="generateName()">
 
-Gerar Nome de Mundo
+Gerar Nome
 
 </button>
 
 
+
 <div id="name" class="result">
 
-Nenhum nome gerado...
+Nenhum nome criado...
 
 </div>
 
@@ -99,8 +104,9 @@ Nenhum nome gerado...
 
 
 
-<section class="card">
 
+
+<section class="card">
 
 <h2>🧬 Criador de Raças</h2>
 
@@ -110,6 +116,7 @@ Nenhum nome gerado...
 Criar Raça
 
 </button>
+
 
 
 <div id="race" class="result">
@@ -125,8 +132,10 @@ Nenhuma raça criada...
 
 
 
-<section class="card">
 
+
+
+<section class="card">
 
 <h2>⚔️ Criador de Conflitos</h2>
 
@@ -138,9 +147,10 @@ Criar Guerra
 </button>
 
 
+
 <div id="war" class="result">
 
-Nenhum conflito criado...
+Nenhuma guerra criada...
 
 </div>
 
@@ -151,17 +161,19 @@ Nenhum conflito criado...
 
 
 
-<section class="card">
 
+
+<section class="card">
 
 <h2>🔮 Sistema de Magia</h2>
 
 
 <button onclick="generateMagic()">
 
-Criar Sistema Mágico
+Criar Magia
 
 </button>
+
 
 
 <div id="magic" class="result">
@@ -177,29 +189,17 @@ Nenhuma magia criada...
 
 
 
+
+
+
 <section class="card">
 
-
-<h2>💾 Salvar Mundo</h2>
-
-
-<button onclick="saveWorld()">
-
-Salvar Projeto
-
-</button>
+<h2>📖 Livro do Mundo</h2>
 
 
-<button onclick="loadWorld()">
+<div id="worldBook" class="result">
 
-Carregar Projeto
-
-</button>
-
-
-<div id="saveStatus" class="result">
-
-Nenhum mundo salvo...
+Seu universo será organizado aqui...
 
 </div>
 
@@ -208,7 +208,49 @@ Nenhum mundo salvo...
 
 
 
+
+
+
+
+
+<section class="card">
+
+<h2>💾 Gerenciamento do Universo</h2>
+
+
+<button onclick="saveWorld()">
+
+💾 Exportar Mundo
+
+</button>
+
+
+
+<button onclick="loadWorld()">
+
+📂 Importar Mundo
+
+</button>
+
+
+
+<div id="saveStatus" class="result">
+
+Nenhum arquivo carregado...
+
+</div>
+
+
+</section>
+
+
+
+
+
+
 </main>
+
+
 
 
 
