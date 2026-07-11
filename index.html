@@ -18,14 +18,13 @@
 
 <header>
 
-🌎 WorldForge AI
+    🌎 WorldForge AI
 
-<small>
-Construa seu próprio universo de fantasia
-</small>
+    <p>
+        Crie seu próprio universo de fantasia
+    </p>
 
 </header>
-
 
 
 
@@ -33,97 +32,124 @@ Construa seu próprio universo de fantasia
 
 
 
-<section class="card">
+<!-- BARRA DE PROGRESSO -->
 
-<h2>🌌 Criador de Mundo</h2>
+<div class="progress">
 
+    <div class="step active">
+        🌎 Mundo
+    </div>
+
+    <div class="step">
+        🧬 Raças
+    </div>
+
+    <div class="step">
+        🏰 Reinos
+    </div>
+
+    <div class="step">
+        🔮 Magia
+    </div>
+
+    <div class="step">
+        🐉 Criaturas
+    </div>
+
+    <div class="step">
+        📖 Resumo
+    </div>
+
+</div>
+
+
+
+
+
+<!-- ETAPA 1 -->
+
+<section class="window active">
+
+
+<h2>
+🌎 Criar Mundo
+</h2>
+
+
+<label>
+Nome do Universo
+</label>
 
 <input 
 id="worldName"
-placeholder="Nome do mundo">
+placeholder="Ex: Aetherion">
 
 
-<select id="theme">
 
-<option>Fantasia Medieval</option>
+<label>
+Tipo de Mundo
+</label>
 
-<option>Fantasia Sombria</option>
 
-<option>Fantasia Cósmica</option>
+<select id="worldType">
 
-<option>Ficção Científica</option>
+<option>
+Fantasia Medieval
+</option>
 
-<option>Mundo Pós-Apocalíptico</option>
+<option>
+Fantasia Sombria
+</option>
+
+<option>
+Fantasia Cósmica
+</option>
+
+<option>
+Ficção Científica
+</option>
+
+<option>
+Pós-Apocalíptico
+</option>
 
 </select>
 
 
 
-<button onclick="createWorld()">
-Criar Universo
-</button>
+<label>
+Nível de magia
+</label>
 
 
+<select id="magicLevel">
 
-<div id="world" class="result">
+<option>
+Sem magia
+</option>
 
-Seu mundo aparecerá aqui...
+<option>
+Magia rara
+</option>
 
-</div>
+<option>
+Magia comum
+</option>
 
+<option>
+Magia absurda
+</option>
 
-</section>
-
-
-
-
-
-<section class="card">
-
-<h2>✨ Gerador de Nomes</h2>
-
-
-<button onclick="generateName()">
-
-Gerar Nome
-
-</button>
-
-
-
-<div id="name" class="result">
-
-Nenhum nome criado...
-
-</div>
-
-
-</section>
+</select>
 
 
 
 
+<button class="next">
 
-
-
-<section class="card">
-
-<h2>🧬 Criador de Raças</h2>
-
-
-<button onclick="generateRace()">
-
-Criar Raça
+Próximo ➜
 
 </button>
-
-
-
-<div id="race" class="result">
-
-Nenhuma raça criada...
-
-</div>
 
 
 </section>
@@ -134,53 +160,43 @@ Nenhuma raça criada...
 
 
 
+<!-- ETAPA 2 -->
 
-<section class="card">
-
-<h2>⚔️ Criador de Conflitos</h2>
-
-
-<button onclick="generateWar()">
-
-Criar Guerra
-
-</button>
+<section class="window">
 
 
+<h2>
+🧬 Raças
+</h2>
 
-<div id="war" class="result">
 
-Nenhuma guerra criada...
+<div class="list">
+
+Nenhuma raça criada
 
 </div>
 
 
-</section>
+<button>
++ Criar Raça
+</button>
 
 
+<br>
 
 
+<button class="back">
 
-
-
-<section class="card">
-
-<h2>🔮 Sistema de Magia</h2>
-
-
-<button onclick="generateMagic()">
-
-Criar Magia
+⬅ Voltar
 
 </button>
 
 
+<button class="next">
 
-<div id="magic" class="result">
+Próximo ➜
 
-Nenhuma magia criada...
-
-</div>
+</button>
 
 
 </section>
@@ -192,16 +208,44 @@ Nenhuma magia criada...
 
 
 
-<section class="card">
 
-<h2>📖 Livro do Mundo</h2>
+<!-- ETAPA 3 -->
+
+<section class="window">
 
 
-<div id="worldBook" class="result">
+<h2>
+🏰 Reinos e Civilizações
+</h2>
 
-Seu universo será organizado aqui...
+
+<div class="list">
+
+Nenhum reino criado
 
 </div>
+
+
+<button>
++ Criar Reino
+</button>
+
+
+<br>
+
+
+<button class="back">
+
+⬅ Voltar
+
+</button>
+
+
+<button class="next">
+
+Próximo ➜
+
+</button>
 
 
 </section>
@@ -213,43 +257,146 @@ Seu universo será organizado aqui...
 
 
 
-<section class="card">
 
-<h2>💾 Gerenciamento do Universo</h2>
+<!-- ETAPA 4 -->
 
-
-<button onclick="saveWorld()">
-
-💾 Exportar Mundo
-
-</button>
+<section class="window">
 
 
-
-<button onclick="loadWorld()">
-
-📂 Importar Mundo
-
-</button>
+<h2>
+🔮 Sistema de Magia
+</h2>
 
 
+<div class="list">
 
-<div id="saveStatus" class="result">
-
-Nenhum arquivo carregado...
+Nenhuma magia criada
 
 </div>
 
 
+<button>
++ Criar Magia
+</button>
+
+
+<br>
+
+
+<button class="back">
+
+⬅ Voltar
+
+</button>
+
+
+<button class="next">
+
+Próximo ➜
+
+</button>
+
+
 </section>
 
+
+
+
+
+
+
+
+
+<!-- ETAPA 5 -->
+
+<section class="window">
+
+
+<h2>
+🐉 Criaturas e Monstros
+</h2>
+
+
+<div class="list">
+
+Nenhuma criatura criada
+
+</div>
+
+
+<button>
++ Criar Criatura
+</button>
+
+
+<br>
+
+
+<button class="back">
+
+⬅ Voltar
+
+</button>
+
+
+<button class="next">
+
+Próximo ➜
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ETAPA FINAL -->
+
+<section class="window">
+
+
+<h2>
+📖 Universo Completo
+</h2>
+
+
+<div id="summary" class="summary">
+
+Seu universo aparecerá aqui.
+
+</div>
+
+
+<br>
+
+
+<button class="back">
+
+⬅ Voltar
+
+</button>
+
+
+<button>
+
+💾 Exportar Universo
+
+</button>
+
+
+</section>
 
 
 
 
 
 </main>
-
 
 
 
