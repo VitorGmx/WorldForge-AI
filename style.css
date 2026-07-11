@@ -12,46 +12,37 @@ body{
     font-family:'Segoe UI', Arial, sans-serif;
 
     background:
-    radial-gradient(circle at top, #312e81, #020617 70%);
+    radial-gradient(circle at top,#312e81,#020617 70%);
 
-    color:#f8fafc;
+    color:white;
 
 }
 
 
-
-/* CABEÇALHO */
 
 header{
 
-    background:rgba(15,23,42,0.95);
-
-    padding:30px;
-
     text-align:center;
 
-    font-size:34px;
+    padding:35px;
 
-    font-weight:900;
-
-    letter-spacing:2px;
+    background:rgba(15,23,42,.95);
 
     border-bottom:1px solid #475569;
 
-    box-shadow:0 5px 30px rgba(0,0,0,.5);
+    box-shadow:0 10px 30px #000;
 
 }
 
 
-header small{
+header h1{
 
-    display:block;
+    margin:0;
 
-    margin-top:10px;
+}
 
-    font-size:15px;
 
-    font-weight:normal;
+header p{
 
     color:#c4b5fd;
 
@@ -61,17 +52,15 @@ header small{
 
 
 
-/* CONTAINER */
-
 .container{
 
     width:90%;
 
-    max-width:1100px;
+    max-width:1000px;
 
     margin:auto;
 
-    padding:35px 0;
+    padding:30px 0;
 
 }
 
@@ -79,9 +68,61 @@ header small{
 
 
 
-/* CARTÕES */
 
-.card{
+/* BARRA DE ETAPAS */
+
+.progress{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.step{
+
+    padding:12px 18px;
+
+    background:#1e293b;
+
+    border-radius:20px;
+
+    border:1px solid #475569;
+
+    opacity:.5;
+
+}
+
+
+
+.step.active{
+
+    opacity:1;
+
+    background:#7c3aed;
+
+}
+
+
+
+
+
+
+
+/* JANELAS */
+
+
+.window{
+
+    display:none;
 
     background:
 
@@ -92,47 +133,66 @@ header small{
     );
 
 
-    padding:25px;
+    padding:30px;
 
-    margin-bottom:25px;
+    border-radius:25px;
 
-    border-radius:22px;
 
-    border:1px solid #334155;
+    border:1px solid #475569;
 
 
     box-shadow:
 
-    0 15px 40px rgba(0,0,0,.45);
-
-
-    transition:.3s;
-
-}
-
-
-
-.card:hover{
-
-    transform:translateY(-5px);
-
-    border-color:#8b5cf6;
+    0 20px 50px rgba(0,0,0,.5);
 
 }
 
 
 
 
+.window.active{
 
-/* TÍTULOS */
+    display:block;
+
+    animation:
+
+    aparecer .4s;
+
+}
+
+
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+
 
 h2{
 
-    margin-top:0;
-
     color:#ddd6fe;
 
-    font-size:24px;
+    margin-top:0;
 
 }
 
@@ -140,15 +200,38 @@ h2{
 
 
 
-/* CAMPOS */
+
+
+label{
+
+    display:block;
+
+    margin-top:20px;
+
+    margin-bottom:5px;
+
+    color:#cbd5e1;
+
+}
+
+
+
+
+
 
 input,
 select{
 
 
-    width:auto;
+    width:100%;
 
-    padding:13px;
+    padding:14px;
+
+
+    border-radius:12px;
+
+
+    border:1px solid #475569;
 
 
     background:#020617;
@@ -157,25 +240,8 @@ select{
     color:white;
 
 
-    border:1px solid #475569;
+    font-size:16px;
 
-
-    border-radius:12px;
-
-
-    margin:5px;
-
-
-    outline:none;
-
-}
-
-
-
-input:focus,
-select:focus{
-
-    border-color:#a855f7;
 
 }
 
@@ -183,30 +249,22 @@ select:focus{
 
 
 
-/* BOTÕES */
 
 button{
 
 
-    padding:13px 22px;
+    margin-top:20px;
 
-
-    margin:5px;
+    padding:14px 25px;
 
 
     border:none;
 
 
-    border-radius:12px;
+    border-radius:14px;
 
 
     cursor:pointer;
-
-
-    font-weight:bold;
-
-
-    color:white;
 
 
     background:
@@ -218,7 +276,13 @@ button{
     );
 
 
-    transition:.25s;
+    color:white;
+
+
+    font-weight:bold;
+
+
+    transition:.3s;
 
 }
 
@@ -227,12 +291,13 @@ button{
 button:hover{
 
 
-    transform:scale(1.06);
+    transform:scale(1.05);
 
 
     box-shadow:
 
     0 0 25px #8b5cf6;
+
 
 }
 
@@ -240,18 +305,19 @@ button:hover{
 
 
 
-/* ÁREA DE RESULTADO */
 
-.result{
+
+.list,
+.summary{
 
 
     margin-top:20px;
 
 
+    min-height:100px;
+
+
     padding:20px;
-
-
-    min-height:90px;
 
 
     background:#020617;
@@ -265,75 +331,13 @@ button:hover{
 
     line-height:1.7;
 
-
-    color:#e2e8f0;
-
 }
 
 
 
 
 
-/* TEXTOS GERADOS */
 
-.result b{
-
-    color:#c4b5fd;
-
-}
-
-
-
-ul{
-
-    padding-left:25px;
-
-}
-
-
-
-li{
-
-    margin:8px 0;
-
-}
-
-
-
-
-
-/* EFEITO DE UNIVERSO */
-
-.card::before{
-
-
-    content:"";
-
-
-    display:block;
-
-
-    width:40px;
-
-
-    height:3px;
-
-
-    background:#8b5cf6;
-
-
-    margin-bottom:15px;
-
-
-    border-radius:20px;
-
-}
-
-
-
-
-
-/* CELULAR */
 
 @media(max-width:700px){
 
@@ -346,23 +350,11 @@ li{
 
 
 
-    header{
-
-        font-size:26px;
-
-    }
-
-
-
-    input,
-    select,
-    button{
-
+    .step{
 
         width:100%;
 
-
-        margin-top:10px;
+        text-align:center;
 
     }
 
